@@ -32,7 +32,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, txt2img_defaul
                                                 value=txt2img_defaults['cfg_scale'])
                         txt2img_seed = gr.Textbox(label="Seed (blank to randomize)", lines=1, max_lines=1,
                                                   value=txt2img_defaults["seed"])
-                        txt2img_batch_count = gr.Slider(minimum=1, maximum=600, step=1,
+                        txt2img_batch_count = gr.Slider(minimum=1, maximum=100, step=1,
                                                         label='Batch count (how many batches of images to generate)',
                                                         value=txt2img_defaults['n_iter'])
                         txt2img_batch_size = gr.Slider(minimum=1, maximum=8, step=1,
@@ -67,7 +67,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, txt2img_defaul
                                 output_txt2img_stats = gr.HTML(label='Stats')
                     with gr.Column():
 
-                        txt2img_steps = gr.Slider(minimum=1, maximum=250, step=1, label="Sampling Steps",
+                        txt2img_steps = gr.Slider(minimum=1, maximum=600, step=1, label="Sampling Steps",
                                                   value=txt2img_defaults['ddim_steps'])
                         txt2img_sampling = gr.Dropdown(label='Sampling method (k_lms is default k-diffusion sampler)',
                                                        choices=["DDIM", "PLMS", 'k_dpm_2_a', 'k_dpm_2', 'k_euler_a',
