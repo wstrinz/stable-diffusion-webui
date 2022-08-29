@@ -32,7 +32,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, txt2img_defaul
                                                 value=txt2img_defaults['cfg_scale'])
                         txt2img_seed = gr.Textbox(label="Seed (blank to randomize)", lines=1, max_lines=1,
                                                   value=txt2img_defaults["seed"])
-                        txt2img_batch_count = gr.Slider(minimum=1, maximum=250, step=1,
+                        txt2img_batch_count = gr.Slider(minimum=1, maximum=600, step=1,
                                                         label='Batch count (how many batches of images to generate)',
                                                         value=txt2img_defaults['n_iter'])
                         txt2img_batch_size = gr.Slider(minimum=1, maximum=8, step=1,
@@ -178,9 +178,9 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, txt2img_defaul
                                                    value=img2img_defaults["height"])
                         img2img_seed = gr.Textbox(label="Seed (blank to randomize)", lines=1,
                                                   value=img2img_defaults["seed"])
-                        img2img_steps = gr.Slider(minimum=1, maximum=250, step=1, label="Sampling Steps",
+                        img2img_steps = gr.Slider(minimum=1, maximum=600, step=1, label="Sampling Steps",
                                                   value=img2img_defaults['ddim_steps'])
-                        img2img_batch_count = gr.Slider(minimum=1, maximum=250, step=1,
+                        img2img_batch_count = gr.Slider(minimum=1, maximum=100, step=1,
                                                         label='Batch count (how many batches of images to generate)',
                                                         value=img2img_defaults['n_iter'])
                     with gr.Column():
