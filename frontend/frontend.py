@@ -176,9 +176,6 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, txt2img_defaul
                         img2img_batch_count = gr.Slider(minimum=1, maximum=100, step=1,
                                                         label='Batch count (how many batches of images to generate)',
                                                         value=img2img_defaults['n_iter'])
-                        img2img_batch_count = gr.Slider(minimum=1, maximum=250, step=1,
-                                                        label='Batch count (how many batches of images to generate)',
-                                                        value=img2img_defaults['n_iter'])
                         img2img_width = gr.Slider(minimum=64, maximum=2048, step=64, label="Width",
                                                   value=img2img_defaults["width"])
                         img2img_height = gr.Slider(minimum=64, maximum=2048, step=64, label="Height",
